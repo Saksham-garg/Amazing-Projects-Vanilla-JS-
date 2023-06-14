@@ -18,7 +18,7 @@ function calculate(){
     })
     
 }
-
+    
 
 //EVENT LISTENER
 currentElementOne.addEventListener('change',calculate)
