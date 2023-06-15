@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Menu Slider and Signup Modal</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="user" >
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li> 
+            <li><a href="#">About</a></li> 
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <header>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>This is Landing Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quisquam.</p>
+        <button class="cta-btn" id="open">Sign Up</button>
+    </header>
+    <div class="container">
+        <h2>What Landing Page is all about?</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur corrupti ullam maiores odit earum? Velit, blanditiis delectus tempore ipsum perferendis veritatis nisi a voluptas eum inventore facere sequi deserunt. Eius.</p>
+        
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae fugit ducimus minima eos, non officia deserunt velit mollitia ullam maiores!</p>
+        <h2>Tell me More</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, excepturi commodi quod, corrupti animi voluptatem voluptate officiis harum ex repellat vitae earum nostrum porro nemo. Alias maxime aperiam necessitatibus autem.</p>
+
+        <h2>Benifits</h2>
+        <ul>
+            <li>Lorem, ipsum.</li>
+            <li>Lorem, ipsum.</li>
+            <li>Lorem, ipsum.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto maiores veniam commodi consectetur, cumque repudiandae temporibus ullam animi ea eum vel quidem quos nulla soluta iure ratione magni velit!</p>
+    </div>
+
+    <div id="modal" class="modal-container">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+            </div>
+            <div class="modal-content">
+                <p>Register with us to get offer, support and more.</p>
+                <form class="modal-form">
+                    <div>
+                        <label for="Username">UserName</label>
+                        <input type="text" name="Username" class="form-input" id="Username" placeholder="Enter Usernane">
+                    </div>
+                    <div>
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" id="Email" class="form-input" placeholder="Enter Email">
+                    </div>
+                    <div>
+                        <label for="Password">Password</label>
+                        <input type="password" name="Password" class="form-input" id="Password" placeholder="Enter Password">
+                    </div>
+                    <div>
+                        <label for="Password2">Confirm Password2</label>
+                        <input type="password" name="Password2" class="form-input" id="Password2" placeholder="Enter password again">
+                    </div>
+                    <input type="submit" value="Submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
