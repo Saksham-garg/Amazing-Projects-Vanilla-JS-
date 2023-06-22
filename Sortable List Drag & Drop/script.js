@@ -24,19 +24,19 @@ function injectList(){
     map( a => a.value).
     forEach((person,index) => {
 
-        const list = document.createElement('li');
+        const listItem = document.createElement('li');
 
-        list.setAttribute('data-index',index)
-        list.innerHTML = `
+        listItem.setAttribute('data-index',index)
+        listItem.innerHTML = `
         <span class= "number" > ${index + 1} </span>
         <div class="draggable" draggable = "true" >
              <p class="person-name" > ${person} </p>
              <i class = "fas fa-grip-lines"> </i>
         </div>
         `
-        listItems.push(list)
+        listItems.push(listItem)
 
-        draggable_list.appendChild(list)
+        draggable_list.appendChild(listItem)
     });
 
     addEventListeners();
@@ -46,6 +46,7 @@ injectList()
 let dragStartIndex;
 function dragOver(e){
     e.preventDefault();
+    this.classList.add('over')
 }
 
 function dragEnter(){
@@ -54,16 +55,18 @@ function dragEnter(){
 
 function dragStart(){
     dragStartIndex = +this.closest('li').getAttribute('data-index')
+    console.log(dragStartIndex)
 }
 
 function dragDrop(){
     const dragEndIndex = +this.getAttribute('data-index')
-    swap(dragStartIndex,dragEndIndex)
+    console.log(dragEndIndex)
+    swapItems(dragStartIndex,dragEndIndex)
 
     this.classList.remove('over')
 }
 
-function swap(fromIndex,toIndex){
+function swapItems(fromIndex,toIndex){
     const itemOne = listItems[fromIndex].querySelector('.draggable')
     const itemTwo = listItems[toIndex].querySelector('.draggable')
 
@@ -85,10 +88,21 @@ function addEventListeners(){
         draggable.addEventListener('dragstart',dragStart)
     })
     draggableList.forEach(item =>{
-        item.addEventListener('dragover',(e)=>dragOver(e))
+        item.addEventListener('dragover',dragOver)
         item.addEventListener('dragenter',dragEnter)
         item.addEventListener('dragleave',dragLeave)
-        item.addEventListener('dragdrop',dragDrop)
+        item.addEventListener('drop',dragDrop)
     })
 }
 
+function checkOrder(){
+    listItems.forEach((list,index)=>{
+        if(list.querySelector('.person-name').innerText === richestPeople[index]){
+            list.classList.add('right')
+        }else{
+            list.classList.add('wrong')
+        }
+    })
+}
+
+check_btn.addEventListener('click',checkOrder)
