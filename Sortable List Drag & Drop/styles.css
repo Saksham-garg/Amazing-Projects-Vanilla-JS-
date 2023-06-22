@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --border-color: #e3e5e4 ;
+    --background-color: #c3c7ca ;
+    --text-color: #34444f;
+}  
+
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.draggable-list{
+    border: 1px solid var(--border-color);
+    list-style-type: none;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.draggable-list li{
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.draggable-list li .number{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    font-size: 28px;
+}
+
+.draggable-list li .draggable{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.draggable-list li:not(:last-of-type){
+    border-bottom: 1px solid var(--border-color);
+}
+
+.draggable{
+    cursor: pointer;
+    padding: 20px;
+}
+
+.draggable .person-name{
+    margin: 0px 20px 0px 0px;
+}
+
+.draggable-list li.right .person-name{
+    color: #3ae374;
+}
+
+.draggable-list li.wrong .person-name{
+    color: #ff3838;
+}
+
+.draggable-list li.over .draggable{
+    background-color: var(--background-color);
+}
+.dx-draggable-dragging > div{
+    background-color:red !important;
+}
+
+.check-btn{
+    background-color: var(--background-color);
+    cursor: pointer;
+    border: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.check-btn:active{
+    transform: scale(0.97);
+}
+.check-btn:focus{
+    outline: 0;
+}
