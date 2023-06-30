@@ -15,3 +15,21 @@ showBtn.addEventListener('click',()=>{
 hideBtn.addEventListener('click',()=>{
     addContainer.classList.remove('show')
 })
+
+const cardsEl = []
+
+const cardData = [
+    {
+        questtion :'What must a variable begin with?',
+        answer: 'A letter, $ or _'
+    },
+    {
+        questtion :'What is a variable?',
+        answer: 'Container for a piece of data'
+    },
+    {
+        questtion :'Example of a Case Sensitive Variable?',
+        answer: 'thisIsAVariable'
+    },
+
+]
